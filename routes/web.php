@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $links = [
         [
+            'path' => '/',
+            'name' => 'Home'
+        ],
+        [
             'path' => '/contact',
             'name' => 'Contatti'
         ],
