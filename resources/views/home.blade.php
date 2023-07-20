@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-center">Hello World</h1>
-    <h2> {{ $hello }} da {{ $from }} </h2>
+    <h1 class="text-center">Home</h1>
+    <a href="/contact">Contatti</a>
 </body>
 </html>

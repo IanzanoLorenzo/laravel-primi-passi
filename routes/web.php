@@ -14,11 +14,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
+    return view('home');
+});
+
+Route::get('/contact', function(){
     $data = [
-        'hello' => 'Ciao a te',
-        'from' => 'Me'
+        'membri' => [
+            'membro1' => [
+                'nome' => 'Pietro',
+                'cognome' => 'Zimatti',
+                'email' => 'pietro.zimatti@gmail.com',
+                'n_tel' => '3345566998'
+            ],
+            'membro2' => [
+                'nome' => 'Andrea',
+                'cognome' => 'Pierotto',
+                'email' => 'andrea.pierotto@gmail.com',
+                'n_tel' => '3359684524'
+            ],
+            'membro3' => [
+                'nome' => 'Gino',
+                'cognome' => 'Soccio',
+                'email' => 'gino.soccio@gmail.com',
+                'n_tel' => '3374589652'
+            ]
+        ]
     ];
     
-    return view('home', $data);
+    return view('contact', $data);
 });
