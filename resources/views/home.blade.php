@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1 class="text-center">Home</h1>
-    <a href="/contact">Contatti</a>
+    <ul>
+        @foreach($links as $link)
+        <li>
+            <a href="{{ $link['path'] }}">{{ $link['name'] }}</a>
+        </li>
+        @endforeach
+    </ul>
 </body>
 </html>

@@ -14,32 +14,60 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $links = [
+        [
+            'path' => '/contact',
+            'name' => 'Contatti'
+        ],
+        [
+            'path' => '/product',
+            'name' => 'Prodotti'
+        ]
+    ];
+
+    return view('home', compact('links'));
 });
 
 Route::get('/contact', function(){
-    $data = [
-        'membri' => [
-            'membro1' => [
-                'nome' => 'Pietro',
-                'cognome' => 'Zimatti',
-                'email' => 'pietro.zimatti@gmail.com',
-                'n_tel' => '3345566998'
-            ],
-            'membro2' => [
-                'nome' => 'Andrea',
-                'cognome' => 'Pierotto',
-                'email' => 'andrea.pierotto@gmail.com',
-                'n_tel' => '3359684524'
-            ],
-            'membro3' => [
-                'nome' => 'Gino',
-                'cognome' => 'Soccio',
-                'email' => 'gino.soccio@gmail.com',
-                'n_tel' => '3374589652'
-            ]
+    $membri = [
+        'membro1' => [
+            'nome' => 'Pietro',
+            'cognome' => 'Zimatti',
+            'email' => 'pietro.zimatti@gmail.com',
+            'n_tel' => '3345566998'
+        ],
+        'membro2' => [
+            'nome' => 'Andrea',
+            'cognome' => 'Pierotto',
+            'email' => 'andrea.pierotto@gmail.com',
+            'n_tel' => '3359684524'
+        ],
+        'membro3' => [
+            'nome' => 'Gino',
+            'cognome' => 'Soccio',
+            'email' => 'gino.soccio@gmail.com',
+            'n_tel' => '3374589652'
         ]
     ];
     
-    return view('contact', $data);
+    return view('contact', compact('membri'));
+});
+
+Route::get('/product', function(){
+    $prodotti = [
+        [
+            'nome' => 'Pane',
+            'prezzo' => '3.50'
+        ],
+        [
+            'nome' => 'Grissini',
+            'prezzo' => '4.50'
+        ],
+        [
+            'nome' => 'Pizza',
+            'prezzo' => '6.00'
+        ]
+        ];
+
+    return view('product', compact('prodotti'));
 });
